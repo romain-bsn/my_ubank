@@ -14,14 +14,14 @@
 ## 1. Feature : Internationalisation et gestion des langues
 
 ### US1 - Support multilingue :
-En tant qu’utilisateur non-connecté, je veux pouvoir choisir la langue dans la page d’accueil afin de suivre les instructions d’enregistrement dans cette langue.
+En tant que visiteur non-enregistré, je veux pouvoir choisir la langue dans la page d’accueil afin de suivre les instructions d’enregistrement dans cette langue.
 
 **Critères d’acceptation :**
 - La page d’accueil fournit un sélecteur de langue permettant de changer la langue d’affichage.
 - Toute information affichée utilise la langue sélectionnée.
 
 ### US2 - Choix de la langue préférée lors de la création d’un compte :
-En tant qu’utilisateur qui enregistre un nouveau compte, je veux indiquer et mémoriser ma langue préférée afin d'utiliser l’application dans cette langue pour toutes mes connections futures.
+En tant que visiteur non-enregistré, je veux indiquer et mémoriser ma langue préférée afin d'utiliser l’application dans cette langue pour toutes mes connections futures.
 
 **Critères d’acceptation :**
 - Le formulaire de création de compte propose un champ de choix de langue.
@@ -29,14 +29,14 @@ En tant qu’utilisateur qui enregistre un nouveau compte, je veux indiquer et m
 - La langue choisie après validation du formulaire est enregistrée dans le profil utilisateur.
 
 ### US3 - Application automatique de la langue préférée à chaque connexion :
-En tant qu’utilisateur connecté, je veux que l’application utilise automatiquement ma langue préférée afin de ne pas devoir la reconfigurer à chaque session.
+En tant que titulaire, je veux que l’application utilise automatiquement ma langue préférée afin de ne pas devoir la reconfigurer à chaque session.
 
 **Critères d’acceptation :**
 - Après authentification, l’application utilise la langue enregistrée dans le profil utilisateur.
 - Ce comportement s’applique pendant toute la session.
 
 ### US4 - Modification a posteriori de la langue préférée :
-En tant qu’utilisateur connecté, je veux pouvoir changer ma langue préférée afin de utiliser l’application dans cette langue lors de la session actuelle ainsi que toutes les sessions futures.
+En tant que titulaire, je veux pouvoir changer ma langue préférée afin de utiliser l’application dans cette langue lors de la session actuelle ainsi que toutes les sessions futures.
 
 **Critères d’acceptation :**
 - Une option dans le profil utilisateur permet de changer sa langue préférée.
@@ -48,7 +48,7 @@ En tant qu’utilisateur connecté, je veux pouvoir changer ma langue préféré
 ## 1. Feature : Authentification et Accès
 
 ### US5 - Inscription d'un nouveau titulaire
-En tant que titulaire de comptes bancaires non encore enregistré sur l'application,  
+En tant que titulaire non-enregistré,
 je veux créer un compte utilisateur en renseignant mon nom complet, mon numéro de registre national, ma langue préférée et un mot de passe sécurisé
 afin de pouvoir m'authentifier et gérer mes portefeuilles financiers.
 
@@ -61,7 +61,7 @@ afin de pouvoir m'authentifier et gérer mes portefeuilles financiers.
 - Si tous les champs sont valides et que les mots de passe sont identiques, le compte est créé et l'utilisateur peut se connecter (ou est connecté automatiquement).
 
 ### US6 - Connexion à l'espace titulaire
-En tant que titulaire enregistré,  
+En tant que titulaire,
 je veux me connecter à l'application avec mon nom complet, mon numéro de registre national et mon mot de passe
 afin d'accéder à mes portefeuilles financiers.
 
@@ -73,7 +73,7 @@ afin d'accéder à mes portefeuilles financiers.
 - L'application permet à plusieurs utilisateurs différents d'être connectés simultanément.
 
 ### US7 - Réinitialisation d'un mot de passe oublié
-En tant que titulaire enregistré ayant oublié son mot de passe,  
+En tant que titulaire ayant oublié son mot de passe,  
 je veux réinitialiser mon mot de passe depuis la page de connexion en fournissant mes identifiants
 afin de recouvrer l'accès à mon espace personnel.
 
@@ -87,7 +87,7 @@ afin de recouvrer l'accès à mon espace personnel.
 - Une fois réinitialisé, l'ancien mot de passe est invalidé et l'utilisateur peut se connecter avec son nouveau mot de passe.
 
 ### US8 - Modification du mot de passe depuis le profil
-En tant que titulaire connecté,  
+En tant que titulaire,  
 je veux pouvoir modifier mon mot de passe actuel dans mes paramètres de compte  
 afin de renforcer la sécurité de mon compte.
 
@@ -110,8 +110,8 @@ afin de terminer ma session.
 ## 2. Feature : Gestion des Portefeuilles Financiers
 
 ### US10 - Demande de création et liaison d'un portefeuille financier
-En tant que titulaire connecté auprès d'une institution financière, 
-je veux soumettre une demande de création d'un portefeuille lié à cette institution 
+En tant que titulaire, 
+je veux soumettre une demande de création d'un portefeuille lié à une institution financière
 afin d'accéder aux produits financiers dont je suis titulaire.
 
 **Critères d’acceptation :**
@@ -136,7 +136,7 @@ afin de ne visualiser que les produits que je souhaite gérer.
 - Le client a la possibilité de réactiver ses produits désactivés via une liste des produits masqués.
 
 ### US12 - Demande d'ouverture ou de clôture d'un produit financier
-En tant que titulaire d'un portefeuille actif,  
+En tant que titulaire,  
 je veux introduire une demande d'ouverture ou de clôture d'un produit financier auprès de mon institution financière
 afin de faire gérer la création et la suppression de mes produits financiers directement depuis l'application.
 
@@ -151,17 +151,26 @@ afin de faire gérer la création et la suppression de mes produits financiers d
 
 ### US13 - Notifications de mise à jour du portefeuille et consultation des archives
 En tant que titulaire,  
-je veux être averti dès l'ouverture de mon portefeuille de tout ajout ou suppression de produit effectué par ma banque et accéder aux produits archivés  
-afin de suivre l'état de mes comptes et de consulter l'historique des transactions de mes produits archivés.
+je veux être averti dès l'ouverture de mon portefeuille de tout ajout ou suppression de produit effectué par ma banque
+afin de suivre l'état de mes comptes.
 
 **Critères d’acceptation :**
 - À l'ouverture d'un portefeuille, si la banque a ajouté un ou plusieurs produits, une notification informe le titulaire et les produits sont automatiquement disponibles.
 - À l'ouverture d'un portefeuille, si la banque a supprimé un ou plusieurs produits, une notification est affichée au titulaire.
+
+
+### US14 - Consultation des archives
+En tant que titulaire,
+je veux accéder aux produits financiers archivés
+afin de consulter l'historique des transactions de mes produits financiers supprimés.
+
+**Critères d’acceptation :**
 - Tout produit financier clôturé passe automatiquement dans le statut "archivé".
 - Un produit archivé ne permet plus d'effectuer de nouvelles transactions financières.
 - L'utilisateur dispose d'une visualisation de l'historique complet des transactions de ses produits archivés.
 
-### US14 - Bascule entre portefeuilles et vue d'ensemble
+
+### US15 - Bascule entre portefeuilles et vue d'ensemble
 En tant que titulaire client de plusieurs institutions financières,  
 je veux pouvoir afficher la liste de tous mes portefeuilles et basculer facilement d'un portefeuille à un autre 
 afin de gérer individuellement chacun de mes portefeuilles et avoir une vision d'ensemble de ceux-ci.
@@ -174,10 +183,10 @@ afin de gérer individuellement chacun de mes portefeuilles et avoir une vision 
 
 ## 3. Feature : Virements Bancaires
 
-### US15 - Demande d'activation de la fonctionnalité de virement
-En tant que titulaire d'un portefeuille,  
+### US16 - Demande d'activation de la fonctionnalité de virement
+En tant que titulaire,  
 je veux soumettre une demande d'accès à la fonctionnalité de virement auprès de mon institution financière 
-afin d'obtenir l'autorisation de transférer de l'argent depuis mes comptes.
+afin d'obtenir l'autorisation de transférer de l'argent depuis mes comptes liés à l'institution.
 
 **Critères d’acceptation :**
 - L'utilisateur peut soumettre une demande d'autorisation de virement pour son portefeuille.
