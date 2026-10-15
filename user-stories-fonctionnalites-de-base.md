@@ -199,7 +199,7 @@ afin d'obtenir l'autorisation de transférer de l'argent depuis mes comptes lié
 - Si l'institution refuse la demande :
   L'utilisateur est notifié du rejet et la fonctionnalité reste verrouillée.
 
-### US16 - Émission d'un virement SEPA en euros
+### US17 - Émission d'un virement SEPA en euros
 En tant que titulaire bénéficiant de l'autorisation de virement,  
 je veux effectuer un virement en euros vers un autre compte bancaire au sein de la zone SEPA 
 afin de transférer de l'argent vers mes propres comptes ou un autre destinataire.
@@ -219,7 +219,7 @@ afin de transférer de l'argent vers mes propres comptes ou un autre destinatair
 
 ## 4. Feature : Historique, Visualisation et Exportation
 
-### US17 - Consultation et filtrage de l'historique des transactions
+### US18 - Consultation et filtrage de l'historique des transactions
 En tant que titulaire,  
 je veux consulter l'historique des transactions pour un produit spécifique ou pour un ensemble de produits sur une période définie 
 afin de vérifier mes opérations passées et visualiser l'évolution de mes produits financiers.
@@ -231,7 +231,7 @@ afin de vérifier mes opérations passées et visualiser l'évolution de mes pro
 - Chaque transaction affiche la date, le type d'opération, le montant (avec exactement 2 décimales), la devise et les informations du tiers (IBAN/nom).
 - Si aucune transaction n'existe sur la période sélectionnée, un message informatif est affiché.
 
-### US18 - Exportation des données historiques
+### US19 - Exportation des données historiques
 En tant que titulaire,
 je veux exporter les données de transactions visualisées aux formats CSV et JSON,  
 afin de conserver une copie externe de mes relevés et pouvoir les exploiter dans d'autres outils d'analyse.
@@ -246,7 +246,7 @@ afin de conserver une copie externe de mes relevés et pouvoir les exploiter dan
 
 ## 1. Feature : Authentification et Sécurité de l'Institution
 
-### US19 - Connexion de l'institution financière
+### US20 - Connexion de l'institution financière
 En tant qu'employé d'une institution financière,  
 je veux me connecter à l'application avec l'identifiant unique de mon institution et son mot de passe  
 afin d'accéder à l'espace de gestion des clients et produits financiers de ma banque.
@@ -257,7 +257,7 @@ afin d'accéder à l'espace de gestion des clients et produits financiers de ma 
 - Si les identifiants correspondent, l'utilisateur est connecté et accède à l'espace de son institution.
 - Si l'identifiant ou le mot de passe est invalide, l'accès est refusé avec un message d'erreur.
 
-### US20 - Modification du mot de passe de l'institution
+### US21 - Modification du mot de passe de l'institution
 En tant qu'employé connecté d'une institution financière,  
 je veux pouvoir modifier le mot de passe du compte de l'institution depuis l'application  
 afin de renforcer la sécurité d'accès à ce compte.
@@ -269,7 +269,7 @@ afin de renforcer la sécurité d'accès à ce compte.
 - Le nouveau mot de passe doit respecter les mêmes règles de sécurité et être différent de l'actuel.
 - Une fois modifié, le nouveau mot de passe est immédiatement actif pour toutes les prochaines connexions de l'institution.
 
-### US21 - Déconnexion de l'espace institutionnel
+### US22 - Déconnexion de l'espace institutionnel
 En tant qu'employé connecté d'une institution financière,  
 je veux pouvoir me déconnecter à tout moment de l'application,  
 afin de fermer la session administrative.
@@ -280,7 +280,7 @@ afin de fermer la session administrative.
 
 ## 2. Feature : Gestion des Clients et des Produits Financiers
 
-### US22 - Enregistrement d'un nouveau client auprès de l'institution
+### US23 - Enregistrement d'un nouveau client auprès de l'institution
 En tant qu'employé connecté d'une institution financière,  
 je veux enregistrer un client en renseignant son identité,  
 afin de lui permettre de souscrire à nos produits financiers.
@@ -291,7 +291,7 @@ afin de lui permettre de souscrire à nos produits financiers.
 - Une fois enregistré, le client apparaît immédiatement dans la liste des clients de l'institution.
 - L'employé n'a accès qu'à la liste des clients enregistrés auprès de sa propre institution.
 
-### US23 - Suppression d'un client de l'institution
+### US24 - Suppression d'un client de l'institution
 En tant qu'employé connecté d'une institution financière,  
 je veux supprimer un client de notre institution,  
 afin de mettre fin à son contrat avec notre institution.
@@ -300,7 +300,7 @@ afin de mettre fin à son contrat avec notre institution.
 - L'employé peut sélectionner un client lié à son institution et demander sa suppression.
 - Le client supprimé n'apparaît plus dans la liste des clients de l'institution.
 
-### US24 - Ouverture d'un produit financier pour un client
+### US25 - Ouverture d'un produit financier pour un client
 En tant qu'employé connecté d'une institution financière,  
 je veux ouvrir un nouveau produit financier pour l'un de nos clients,  
 afin de lui fournir un nouveau compte répondant à ses besoins bancaires.
@@ -311,19 +311,20 @@ afin de lui fournir un nouveau compte répondant à ses besoins bancaires.
 - Le produit créé apparaît dans la liste des produits financiers gérés par l'institution.
 - L'employé n'a accès à la gestion qu'aux produits fournis par sa propre institution.
 
-### US25 - Clôture d'un produit financier
+### US26 - Clôture d'un produit financier
 En tant qu'employé connecté d'une institution financière,  
 je veux clôturer un produit financier détenu par un client auprès de notre institution,  
 afin de résilier ce contrat bancaire.
 
 **Critères d'acceptation :**
-- L'employé peut clôturer un produit actif de son institution pour un de ses clients.
+- L'employé peut clôturer un produit actif de son institution pour un de ses clients à condition que celui-ci ait un solde nul.
+- Si le solde du produit financier n'est pas nul, l'opération est annulée et un message d'erreur est affiché.
 - Dès la suppression, le produit passe dans le statut "archivé".
 - L'historique des opérations passées du produit archivé reste conservé.
 
 ## 3. Feature : Traitement des demandes clients
 
-### US26 - Traitement des demandes d'ouverture et de clôture de produits financiers
+### US27 - Traitement des demandes d'ouverture et de clôture de produits financiers
 En tant qu'employé connecté d'une institution financière,
 je veux consulter, approuver ou refuser les demandes d'ouverture et de clôture de comptes formulées par nos clients
 afin de gérer l'ensemble de leurs produits financiers liés à notre institution.
@@ -337,7 +338,7 @@ afin de gérer l'ensemble de leurs produits financiers liés à notre institutio
     - Si la demande est refusée, le produit est supprimé, passe dans l'état archivé et une notification de succès est envoyée au client.
     - Si la demande est refusée, le client reçoit une notification expliquant le refus et la demande est clôturée.
 
-### US27 - Traitement des demandes de liaison de portefeuille
+### US28 - Traitement des demandes de liaison de portefeuille
 En tant qu'employé connecté d'une institution financière,
 je veux consulter, approuver ou refuser les demandes de liaisons de portefeuille émises par nos clients
 afin de contrôler l'accès de nos clients à nos produits.
@@ -347,7 +348,7 @@ afin de contrôler l'accès de nos clients à nos produits.
 - Si la demande est approuvée, tous les produits du client liés à l'institution lui sont rendus visibles.
 - Si la demande est refusée, le client reçoit une notification expliquant le refus et la demande est clôturée.
 
-### US28 - Traitement des demandes d'activation des virements
+### US29 - Traitement des demandes d'activation des virements
 En tant qu'employé connecté d'une institution financière,
 je veux consulter, approuver ou refuser les demandes d'autorisation de virement émises par nos clients
 afin de contrôler l'accès de nos clients à cette fonctionnalité.
@@ -359,7 +360,7 @@ afin de contrôler l'accès de nos clients à cette fonctionnalité.
 
 ## 4. Feature : Visualisation, filtrage, export et import
 
-### US29 - Consultation et filtrage des clients et des produits
+### US30 - Consultation et filtrage des clients et des produits
 En tant qu'employé connecté d'une institution financière,  
 je veux lister et filtrer l'ensemble des clients et produits financiers de mon institution,  
 afin d'accéder rapidement aux informations de nos comptes.
@@ -374,7 +375,7 @@ afin d'accéder rapidement aux informations de nos comptes.
 - Les données affichées se mettent à jour dynamiquement selon les filtres appliqués.
 - L'employé ne peut consulter aucun produit lié à une autre institution.
 
-### US30 - Exportation des données clients et produits de l'institution
+### US31 - Exportation des données clients et produits de l'institution
 En tant qu'employé connecté d'une institution financière,  
 je veux exporter la liste filtrée des clients et des produits de notre institution aux formats CSV et JSON,  
 afin de conserver nos données en dehors de l'application.
@@ -383,7 +384,7 @@ afin de conserver nos données en dehors de l'application.
 - L'interface propose des options de téléchargement aux formats standard CSV et JSON.
 - Le fichier exporté contient exactement les données correspondant aux filtres sélectionnés.
 
-### US31 - Importation de données et peuplement de la base de données
+### US32 - Importation de données et peuplement de la base de données
 En tant qu'employé connecté d'une institution financière,  
 je veux importer un fichier de données (CSV ou JSON) dans l'application,  
 afin d'initialiser ou de mettre à jour la base de données de notre institution sans devoir le faire à la main.
