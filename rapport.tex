@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\geometry{hmargin=2.5cm,vmargin=2.5cm}
+
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+
+\begin{titlepage}
+    \centering
+    {\scshape\LARGE Université de Mons \par}
+    \vspace{1cm}
+    {\scshape\Large Faculté des Sciences -- Sciences Informatiques\par}
+    \vspace{1.5cm}
+    {\huge\bfseries Projet de Génie Logiciel (S-INFO-015)\par}
+    \vspace{0.5cm}
+    {\Large\bfseries Rapport du Jalon 1A\par}
+    \vspace{1.5cm}
+    
+    \textbf{Année académique :} 2026-2027\par
+    \textbf{Groupe :} G02\par
+    \vspace{1cm}
+
+    \begin{tabular}{ll}
+        \textbf{Étudiant 1 :} & Berkani Zinediné (Matricule : ) \\
+        & \textit{Extension choisie :} Paiement et gestion de fraudes \\[0.2cm]
+        \textbf{Étudiant 2 :} & Fontaine Alexis (Matricule : ) \\
+        & \textit{Extension choisie :} Gestion de cartes \\[0.2cm]
+        \textbf{Étudiant 3 :} & Quarta Hugo (Matricule : 250711) \\
+        & \textit{Extension choisie :} Gestion du budget financier \\[0.2cm]
+        \textbf{Étudiant 4 :} & Vandooren Romain (Matricule : ) \\
+        & \textit{Extension choisie :} Gestion des placements \\
+    \end{tabular}
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+
+\section{Fonctionnalités de base}
+
+\subsection{Diagrammes de cas d'utilisation (UML)}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth]{MyUbankUC.jpg}}
+    \caption{Diagramme de cas d'utilisation -- Fonctionnalités de base}
+    \label{fig_uc_base}
+\end{figure}
+\noindent \textit{Le diagramme ci-dessus se trouve dans le projet Visual Paradigme Projet Génie Logiciel G02.vpp et l'image peut être retrouvée dans le fihier "MyUbankUC.jpg" dans l'archive contenant ce rapport.}
+
+\subsection{Interaction Overview Diagram}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth]{MyUbankIOD.jpg}}
+    \caption{Interaction Overview Diagram -- Fonctionnalités de base}
+    \label{fig_iod_base}
+\end{figure}
+\noindent \textit{Le diagramme ci-dessus se trouve dans le projet Visual Paradigme Projet Génie Logiciel G02.vpp et l'image peut être retrouvée dans le fihier "MyUbankIOD.jpg" dans l'archive contenant ce rapport.}
+
+\pagebreak
+Afin de rendre ce diagramme plus lisible, voici un découpage des différentes parties de celui-ci :
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth]{IOD-Areas/MyUbankIOD-Areas.jpg}}
+    \caption{Interaction Overview Diagram -- Découpage}
+    \label{fig_iod_areas}
+\end{figure}
+
+
+\subsubsection{IOD - Phase de connexion}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{IOD-Areas/ConnexionArea.png}}
+    \caption{Interaction Overview Diagram -- Phase de connexion}
+    \label{fig_iod_connexion}
+\end{figure}
+
+
+\subsubsection{IOD - Actions client}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{IOD-Areas/ClientActionArea1.png}}
+    \caption{Interaction Overview Diagram -- Actions client}
+    \label{fig_iod_action_client}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{IOD-Areas/ClientActionArea2.png}}
+    \caption{Interaction Overview Diagram -- Visualisation et export de données}
+    \label{fig_iod_visu_export}
+\end{figure}
+
+\subsubsection{IOD - Actions employé}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.9\textwidth]{IOD-Areas/EmpActionArea1.png}}
+    \caption{Interaction Overview Diagram -- Actions employé}
+    \label{fig_iod_action_emp}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=0.9\textwidth]{IOD-Areas/EmpActionArea2.png}}
+    \caption{Interaction Overview Diagram -- Visualisation, export et import de données}
+    \label{fig_iod_visu_export_import_emp}
+\end{figure}
+
+\subsubsection{IOD - Phase de déconnexion}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{IOD-Areas/DeconnexionArea.png}}
+    \caption{Interaction Overview Diagram -- Phase de déconnexion}
+    \label{fig_iod_déconnexion}
+\end{figure}
+
+\subsubsection{Explications de l'IOD}
+Une fois la phase de connexion terminée, le diagramme se divise en deux parties : la connexion à l'espace client et à l'espace de gestion des clients de l'institution financières.
+Le client ou l'employé de l'institution financière peuvent donc choisir d'effectuer n'importe quelle action dans leur espace de l'application. Une fois l'action effectuée, ils sont libres de poursuivre leur session, auquel cas ils retournent dans la séléction de leur prohaine action.
+Dans le cas contraire, la phase de déconnexion débute et l'utilisateur (client ou employé) est déconnecté de sa session.
+\vspace{0.3cm}
+\\
+\textit{NB : Les découpes du diagramme peuvent être consultées dans le sous-dossier IOD-Areas/ de l'archive contenant ce rapport.}
+\pagebreak
+
+\subsection{User Stories -- Fonctionnalités de base}
+\input{user-stories-fonctionnalites-de-base.tex}
+
+\section{Extensions individuelles}
+
+\subsection{Extension 1 : Paiement et gestion de fraudes -- Berkani Zinediné}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/uc_extension1.png}
+    \caption{Cas d'utilisation -- Extension 1}
+\end{figure}
+\subsubsection{Interaction Overview Diagram}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/iod_extension1.png}
+    \caption{Interaction Overview Diagram -- Extension 1}
+\end{figure}
+\subsubsection{User Stories}
+% \input{extension1-user-stories.tex}
+
+\subsection{Extension 2 : Gestion de cartes -- Fontaine Alexis}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/uc_extension2.png}
+    \caption{Cas d'utilisation -- Extension 2}
+\end{figure}
+\subsubsection{Interaction Overview Diagram}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/iod_extension2.png}
+    \caption{Interaction Overview Diagram -- Extension 2}
+\end{figure}
+\subsubsection{User Stories}
+% \input{extension2-user-stories.tex}
+
+\subsection{Extension 3 : Gestion du budget financier -- Quarta Hugo}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/uc_extension3.png}
+    \caption{Cas d'utilisation -- Extension 3}
+    \label{fig_uc_ext3}
+\end{figure}
+\subsubsection{Interaction Overview Diagram}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/iod_extension3.png}
+    \caption{Interaction Overview Diagram -- Extension 3}
+    \label{fig_iod_ext3}
+\end{figure}
+\subsubsection{User Stories}
+% \input{extension3-user-stories.tex}
+
+\subsection{Extension 4 : Gestion des placements -- Vandooren Romain}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/uc_extension4.png}
+    \caption{Cas d'utilisation -- Extension 4}
+\end{figure}
+\subsubsection{Interaction Overview Diagram}
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/iod_extension4.png}
+    \caption{Interaction Overview Diagram -- Extension 4}
+\end{figure}
+\subsubsection{User Stories}
+% \input{extension4-user-stories.tex}
+
+\end{document}
