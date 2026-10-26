@@ -1,0 +1,411 @@
+\textbf{UE :} S-INFO-015 Projet d'analyse et de conception logicielle\\
+\textbf{Année académique :} 2026-2027\\
+\textbf{Groupe :} G02 \textbf{Responsable de l'extension :} Quarta Hugo
+(Matricule : 250711)
+
+\hypertarget{gestion-du-budget-financier}{%
+\subsubsection{Gestion du budget financier
+:}\label{gestion-du-budget-financier}}
+
+\hypertarget{feature-virements-bancaires-ruxe9currents}{%
+\paragraph{1. Feature : Virements bancaires
+récurrents}\label{feature-virements-bancaires-ruxe9currents}}
+
+\hypertarget{us1---cruxe9ation-et-planification-dun-virement-ruxe9current}{%
+\subparagraph{US1 - Création et planification d'un virement
+récurrent}\label{us1---cruxe9ation-et-planification-dun-virement-ruxe9current}}
+
+En tant que titulaire bénéficiant de l'autorisation de virement sur mon
+portefeuille,\\
+je veux programmer un virement bancaire récurrent en définissant sa
+fréquence, son montant et ses comptes associés afin d'automatiser mes
+transferts d'argent réguliers.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'utilisateur sélectionne un compte source et un compte bénéficiaire
+  (compte interne au portefeuille ou IBAN SEPA externe valide).
+\item
+  La fonctionnalité est accessible uniquement si la permission de
+  virement a été accordée par l'institution financière.
+\item
+  L'utilisateur doit définir la période du virement : hebdomadaire,
+  mensuelle ou trimestrielle.
+\item
+  L'utilisateur peut renseigner une date de début obligatoire et une
+  date de fin optionnelle.
+\item
+  L'utilisateur peut associer une communication libre ou structurée et
+  une catégorie budgétaire spécifique au virement.
+\item
+  Le virement programmé est visible dans la liste des virements
+  récurrents avec le statut ``Actif''.
+\item
+  À chaque échéance, le montant est débité du compte source et crédité
+  sur le compte bénéficiaire (et la transaction est enregistrée dans
+  l'historique).
+\item
+  Si, à l'échéance, le solde est insuffisant, le virement récurrent
+  échoue, aucune transaction n'est effectuée et une notification d'échec
+  est envoyée au titulaire.
+\end{itemize}
+
+\hypertarget{us2---virements-ruxe9currents-conditionnels}{%
+\subparagraph{US2 - Virements récurrents conditionnels
+:}\label{us2---virements-ruxe9currents-conditionnels}}
+
+En tant que titulaire bénéficiant de l'autorisation de virement sur mon
+portefeuille,\\
+je veux ajouter des conditions à mes virements récurrents afin
+d'empêcher mon compte courant d'être à découvert ou d'épargner prudement
+de l'argent.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Lors de la création ou modification d'un virement récurrent,
+  l'utilisateur peut activer une des conditions suivantes :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Condition d'épargne prudente : Le virement du compte courant vers le
+    compte d'épargne ne s'exécute que si le solde restant sur le compte
+    courant après exécution reste supérieur (ou égale) à un seuil défini
+    par l'utilisateur.
+  \item
+    Condition de compte à découvert : Un virement automatique est
+    déclenché depuis un compte d'épargne vers le compte courant dès que
+    le solde de celui-ci descend sous un seuil critique défini afin de
+    le réapprovisionner.
+  \end{itemize}
+\item
+  Si la condition n'est pas remplie à l'échéance, le virement est ignoré
+  pour cette échéance sans être annulé pour les échéances futures et une
+  notification d'information est envoyée à l'utilisateur.
+\item
+  L'utilisateur peut ajouter, modifier ou retirer une condition à
+  n'importe quel instant sans devoir recréer le virement récurrent.
+\end{itemize}
+
+\hypertarget{us3---pause-et-ruxe9activation-des-virements-ruxe9currents}{%
+\subparagraph{US3 - Pause et réactivation des virements récurrents
+:}\label{us3---pause-et-ruxe9activation-des-virements-ruxe9currents}}
+
+En tant que titulaire bénéficiant de l'autorisation de virement sur mon
+portefeuille, je veux pouvoir suspendre, réactiver et supprimer un
+virement récurrent programmé,\\
+afin de contrôler l'ensemble de mes transferts automatiques actifs
+facilement.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'interface affiche la liste de tous les virements automatiques
+  (actifs et suspendus).
+\item
+  L'utilisateur peut cliquer sur ``Mettre en pause'' : le statut du
+  virement devient immédiatement ``En pause'' et aucune transaction
+  n'est effectuée lors des échéances tant qu'il est dans cet état.
+\item
+  L'utilisateur peut réactiver un virement suspendu à tout moment : les
+  exécutions reprennent alors à partir de la prochaine échéance.
+\item
+  L'utilisateur peut supprimer définitivement un virement récurrent (une
+  demande de confirmation est affichée avant la suppression).
+\item
+  La suppression d'un virement récurrent n'efface pas l'historique des
+  transactions passées de celui-ci.
+\end{itemize}
+
+\hypertarget{feature-classification-des-transactions}{%
+\paragraph{2. Feature : Classification des
+transactions}\label{feature-classification-des-transactions}}
+
+\hypertarget{us4---personnalisation-et-gestion-des-catuxe9gories-budguxe9taires}{%
+\subparagraph{US4 - Personnalisation et gestion des catégories
+budgétaires}\label{us4---personnalisation-et-gestion-des-catuxe9gories-budguxe9taires}}
+
+En tant que titulaire connecté,\\
+je veux gérer mes catégories budgétaires en modifiant les catégories
+existantes ou en créant de nouvelles catégories\\
+afin d'adapter le système de gestion de budget à mes habitudes de
+consommation personnelles.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'application fournit par défaut des catégories prédéfinies :
+  \emph{Santé, Travail, Loisirs, Sport, Énergie, Transport, Études,
+  Autres}.
+\item
+  Chaque catégorie possède un nom unique, une icône et un code couleur.
+\item
+  L'utilisateur peut ajouter une nouvelle catégorie personnalisée en
+  définissant son nom, son icône et sa couleur.
+\item
+  L'utilisateur peut modifier le nom, la couleur ou l'icône d'une
+  catégorie existante (les modifications se répercutent dynamiquement
+  sur toutes les transactions et graphiques associés).
+\item
+  L'utilisateur peut supprimer une catégorie personnalisée (les
+  transactions qui y étaient associées basculent dans la catégories
+  ``Autres'' ou dans une catégorie choisie par l'utilisateur lors de la
+  suppression).
+\item
+  La catégorie système ``Autres'' ne peut être ni renommée ni supprimée.
+\end{itemize}
+
+\hypertarget{us5---classification-manuelle-des-transactions}{%
+\subparagraph{US5 - Classification manuelle des transactions
+:}\label{us5---classification-manuelle-des-transactions}}
+
+En tant que titulaire connecté,\\
+je veux affecter ou modifier manuellement la catégorie associée à une
+transaction financière passée ou récente afin de modifier ou préciser la
+répartition de mes dépenses et revenus.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Dans l'historique des transactions d'un compte ou d'un portefeuille,
+  chaque ligne affiche la catégorie actuellement associée avec son icône
+  colorée.
+\item
+  L'utilisateur peut cliquer sur la catégorie d'une transaction afin de
+  lui attribuer une autre catégorie.
+\item
+  La mise à jour modifie dynamiquement les visualisations budgétaires.
+\item
+  Par défaut, toute les transactions qui ne correspondent à aucune règle
+  automatique est rattachée à la catégorie ``Autres''.
+\end{itemize}
+
+\hypertarget{us6---duxe9finition-de-ruxe8gles-de-classification-automatique}{%
+\subparagraph{US6 - Définition de règles de classification
+automatique}\label{us6---duxe9finition-de-ruxe8gles-de-classification-automatique}}
+
+En tant que titulaire d'un portefeuille,\\
+je veux configurer des règles d'assignation automatique de catégories
+afin de catégoriser automatiquement mes dépenses et revenus.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'utilisateur peut créer une règle de classification automatique liée
+  à son portefeuille en précisant :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    L'attribut de la transaction à analyser (ex : IBAN
+    émetteur/destinataire, communication ou montant).
+  \item
+    L'opérateur de comparaison (\emph{égal à}, \emph{supérieur à},
+    \emph{inférieur à}, \emph{contient},\ldots).
+  \item
+    La valeur cible (nombre à 11 chiffres, chaîne de caractères ou
+    montant en fonction du type d'attribut comparé).
+  \item
+    La catégorie cible à assigner automatiquement.
+  \end{itemize}
+\item
+  L'utilisateur peut organiser les règles de classification automatiques
+  définies par ordre de priorité.
+\item
+  Lorsqu'une nouvelle transaction est effectuée, les règles sont
+  évaluées dans l'ordre de priorité défini par l'utilisateur et dès
+  qu'une règle est valide, la catégorie correspondante est immédiatement
+  assignée à la transaction.
+\item
+  L'utilisateur peut appliquer une nouvelle règle créée à l'historique
+  complet de ses transactions.
+\end{itemize}
+
+\hypertarget{us7---consultation-et-filtrage-de-lhistorique-des-transactions-uxe9tendus-aux-catuxe9gories-extension-de-lus18-de-base}{%
+\subparagraph{US7 - Consultation et filtrage de l'historique des
+transactions étendus aux catégories (Extension de l'US18 de
+base)}\label{us7---consultation-et-filtrage-de-lhistorique-des-transactions-uxe9tendus-aux-catuxe9gories-extension-de-lus18-de-base}}
+
+En tant que titulaire connecté,\\
+je veux visualiser la répartition de mes dépenses et de mes revenus par
+catégorie sous forme de graphiques, de listes et de tableaux,\\
+afin d'identifier les catégories de dépenses et de revenus les plus
+importantes de mon budget.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'interface d'analyse comporte un diagramme circulaire et un graphique
+  à barres illustrant la répartition en pourcentage et en montant par
+  catégorie.
+\item
+  L'utilisateur peut filtrer la visualisation par période, par catégorie
+  budgétaire et par comptes spécifiques au sein d'un ou plusieurs
+  portefeuilles.
+\item
+  L'utilisateur peut exporter les données visualisées filtrées par
+  catégorie aux formats CSV et JSON (extension de l'US19 de base).
+\end{itemize}
+
+\hypertarget{feature-statistiques-budguxe9taires-et-analyse-de-tendances}{%
+\paragraph{3. Feature : Statistiques budgétaires et analyse de
+tendances}\label{feature-statistiques-budguxe9taires-et-analyse-de-tendances}}
+
+\hypertarget{us8---consultation-des-statistiques-budguxe9taires}{%
+\subparagraph{US8 - Consultation des statistiques
+budgétaires}\label{us8---consultation-des-statistiques-budguxe9taires}}
+
+En tant que titulaire connecté,\\
+je veux consulter des statistiques détaillées sur mes dépenses et
+revenus afin d'évaluer la distribution et la variabilité de mes dépenses
+sur une période choisie.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'interface dédiée aux statistiques affiche pour la période
+  sélectionnée :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Le montant minimum et maximum.
+  \item
+    La moyenne et l'écart-type.
+  \item
+    La médiane, les quartiles et l'écart interquartile.
+  \end{itemize}
+\item
+  L'utilisateur peut choisir de calculer ces statistiques sur l'ensemble
+  des transactions ou de sélectionner/exclure certaines catégories.
+\item
+  L'utilisateur peut choisir la période sur laquelle les statistiques
+  sont calculées.
+\item
+  Si aucune transaction n'existe pour les filtres appliqués, un message
+  informatif est affiché.
+\end{itemize}
+
+\hypertarget{us9---visualisation-des-tendances-temporelles-et-de-la-saisonnalituxe9}{%
+\subparagraph{US9 - Visualisation des tendances temporelles et de la
+saisonnalité}\label{us9---visualisation-des-tendances-temporelles-et-de-la-saisonnalituxe9}}
+
+En tant que titulaire connecté,\\
+je veux analyser l'évolution temporelle de mon budget via des courbes
+comparatives et des indicateurs de saisonnalité,\\
+afin de visualiser les variations de mes dépenses et revenus d'une
+période à l'autre.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'application fournit un graphique linéaire comparant les dépenses
+  d'une période par rapport à la période précédente.
+\item
+  L'interface affiche le taux de variation (en pourcentage et en euro)
+  entre les deux périodes comparées.
+\item
+  L'utilisateur peut sélectionner et modifier l'ensemble des catégories
+  à prendre en compte lors de la visualisation.
+\item
+  L'application fournit une vue mettant en évidence les dépenses/revenus
+  majoritaires en fonction de la saison.
+\end{itemize}
+
+\hypertarget{feature-duxe9tection-danomalies-et-alertes}{%
+\paragraph{4. Feature : Détection d'anomalies et
+alertes}\label{feature-duxe9tection-danomalies-et-alertes}}
+
+\hypertarget{us10---duxe9tection-danomalies-de-duxe9penses-par-rapport-uxe0-lhistorique-et-au-foyer-moyen}{%
+\subparagraph{US10 - Détection d'anomalies de dépenses par rapport à
+l'historique et au foyer
+moyen}\label{us10---duxe9tection-danomalies-de-duxe9penses-par-rapport-uxe0-lhistorique-et-au-foyer-moyen}}
+
+En tant que titulaire connecté,\\
+je veux être notifié automatiquement dès qu'une dépense inhabituelle ou
+anormale est détectée sur mon compte afin d'éviter les dépenses
+déraisonnables et d'améliorer la gestion de mon budget financier.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Le système analyse en continu les transactions effectuée et détecte :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Les anomalie par rapport à l'historique personnel : Le système
+    détecte les dépenses d'une catégorie qui dépassent significativement
+    la moyenne habituelle du titulaire.
+  \item
+    Les anomalie par rapport au foyer moyen : Le système compare les
+    dépenses d'une catégorie du titualire par rapport à celles du foyer
+    moyen.
+  \end{itemize}
+\item
+  Dès qu'une anomalie est détectée, une alerte est envoyée au titulaire
+  en précisant la transaction concernée ainsi que le montant et l'écart
+  constaté.
+\item
+  L'utilisateur a la possibilité de marquer une alerte comme
+  ``Légitime'' (pour ne plus être alerté sur cet événement) ou de régler
+  les seuils de détection des anomalies pour une cette catégorie.
+\end{itemize}
+
+\hypertarget{feature-pruxe9diction-et-projection-budguxe9taire}{%
+\paragraph{5. Feature : Prédiction et projection
+budgétaire}\label{feature-pruxe9diction-et-projection-budguxe9taire}}
+
+\hypertarget{us11---projection-du-solde-dun-portefeuille}{%
+\subparagraph{US11 - Projection du solde d'un
+portefeuille}\label{us11---projection-du-solde-dun-portefeuille}}
+
+En tant que titulaire connecté,\\
+je veux visualiser une prédiction de l'évolution du solde de mes comptes
+pour un certain portefeuille à une date ultérieure\\
+afin d'anticiper mon budget future et anticiper d'éventuelles
+difficultés financières.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'utilisateur peut sélectionner une date cible de prédiction future.
+\item
+  L'application prédis le solde future du solde sur base :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    des virements récurrents actifs sur la période.
+  \item
+    de la projection des dépenses et revenus sur la période estimée à
+    partir des statistiques historiques et des tendances.
+  \end{itemize}
+\item
+  L'utilisateur peut sélectionner un ensemble de catégories à exclure ou
+  à prendre en compte lors de la projection.
+\end{itemize}
