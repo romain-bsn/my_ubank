@@ -139,12 +139,12 @@ En tant que titulaire, je veux pouvoir consulter les alertes de fraudes détect�
     - niveau de risque (faible,moyen et fort);
     - action appliqué par le système.
 - L'utilisateur doit pouvoir consulter l'historique des alertes de fraude.
-- L'utilisateur doit pouvoir indique qu'une alerte est un faux possitif.
+- L'utilisateur doit pouvoir indique qu'une alerte est un faux positif.
 - Le système doit conserver les désicions de l'utilisateur afin d'améliorer les futurs controles.
 - L'etat de chaque alerte doit etre affiché:
     - en attente;
     - confirmée comme fraude;
-    - faux possitif.
+    - faux positif.
 
 
 
