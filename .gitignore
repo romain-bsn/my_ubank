@@ -30,3 +30,6 @@ desktop.ini
 *.swo
 *.tmp
 .#*
+
+
+cleanup.sh

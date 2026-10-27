@@ -1,0 +1,251 @@
+\textbf{UE :} S-INFO-015 Projet d'analyse et de conception logicielle\\
+\textbf{Année académique :} 2026-2027\\
+\textbf{Groupe :} G02 \textbf{Responsable de l'extension :} Vandooren
+Romain (Matricule : 251074)
+
+\subsubsection{Gestion des placements :}\label{gestion-des-placements}
+
+\emph{Note :} Le terme « client investisseur » est défini comme un
+client ayant un profil d'investisseur valide. Cette forme est utilisée
+par simplicité d'écriture dans les User Stories ci-dessous.
+
+\subparagraph{US1 - Demander l'ouverture d'un
+compte-titre}\label{us1---demander-louverture-dun-compte-titre}
+
+En tant que utilisateur connecté,\\
+je veux ouvrir un compte titre\\
+afin de réaliser des placements financiers.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Le compte-titre du client doit être lié à un de ses comptes courants
+\item
+  Ce compte-titre peut gérer plusieurs devises en allouant un
+  compartiment pour chaque devise
+\item
+  Au sein d'un compartiment d'une , uniquement les placements utilisant
+  cette devise y seront accessibles
+\end{itemize}
+
+\subparagraph{US2 - Remplir / modifier le formulaire de profil
+d'investisseur}\label{us2---remplir-modifier-le-formulaire-de-profil-dinvestisseur}
+
+En tant que client investisseur\\
+je souhaite remplir un formulaire\\
+afin de définir mon profil d'investisseur (conservateur, défensif,
+neutre, dynamique, agressif)
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  A tout moment le formulaire peut être repassé par le client afin de
+  modifier son profil
+\item
+  Le formulaire évalue la situation financière, le risque que le client
+  est prêt à prendre et son horizon de placement (en années).
+\item
+  Le profil bloque tout nouvel achat de produit boursier dont le risque
+  est plus élevé que celui configuré par le profil
+\item
+  Le formulaire doit être envoyé vers le serveur et être validé par
+  l'institution financière
+\item
+  Le profil est attribué par l'institution financière
+\end{itemize}
+
+\subparagraph{US3 - Acheter des produits
+financiers}\label{us3---acheter-des-produits-financiers}
+
+En tant que client ayant un profil d'investisseur,\\
+je veux acheter des produits financiers\\
+afin d'enrichir mon compte-titre.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'interface doit verrouiller l'achat et la visibilité des produits
+  financiers dont le risque est strictement supérieur au profil du
+  client
+\item
+  Les potentiels frais d'investissement et autres coûts liés sont inclus
+  dans l'achat
+\end{itemize}
+
+\subparagraph{US4 - Consulter les placements réalisés du
+compte-titre}\label{us4---consulter-les-placements-ruxe9alisuxe9s-du-compte-titre}
+
+En tant que client investisseur,\\
+je souhaite visualiser mes placements réalisés triés par type\\
+afin de suivre l'évolution de mes investissements.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Pour chaque placement, l'interface affiche Nom, ISIN, Date achat, Date
+  expiration (si existe), Quantité, Prix d'achat, Valeur actuelle,
+  rendement, poids relatif dans le compte titre et dans le portefeuille
+  global.
+\end{itemize}
+
+\subparagraph{US5 - Vendre des placements
+financiers}\label{us5---vendre-des-placements-financiers}
+
+En tant que client investisseur,\\
+je souhaite vendre les placements de mon compte titre\\
+afin d'obtenir de l'argent.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'argent de la vente doit être placé sur un compte courant du client
+\item
+  Les taxes, frais de ventes et autres coûts liés doivent être inclus
+  dans le processus de vente
+\end{itemize}
+
+\subparagraph{US6 - Comparer avec un portefeuille de
+référence}\label{us6---comparer-avec-un-portefeuille-de-ruxe9fuxe9rence}
+
+En tant que client investisseur\\
+je souhaite voir un portefeuille de référence basé sur mon profil
+d'investisseur\\
+afin de comparer la performance et la diversification de mon
+portefeuille actuel.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Un compte titre fictif doit être généré pour l'investisseur basé sur
+  son profil de risque.
+\item
+  L'interface doit dédier une vue pour comparer le portefeuille réel et
+  le portefeuille de référence.
+\end{itemize}
+
+\subparagraph{US7 - Consulter l'historique des prix et statistiques d'un
+produit}\label{us7---consulter-lhistorique-des-prix-et-statistiques-dun-produit}
+
+En tant que client investisseur,\\
+je souhaite apercevoir l'historique des prix d'un produit à plusieurs
+échelles de temps (D, W, M, 3M, 6M, YTD, 1Y, 5Y, MAX) sous forme d'un
+graphique et de statistiques\\
+afin de pouvoir réaliser un investissement éclairé.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Les données du produit boursier proviennent d'une API externe
+\item
+  Les données doivent être stocké dans le base de donnée
+\item
+  Les données doivent être mises à jour automatiquement régulièrement.
+\end{itemize}
+
+\subparagraph{US8 - Exporter les données du
+compte-titre}\label{us8---exporter-les-donnuxe9es-du-compte-titre}
+
+En tant que client investisseur,\\
+je souhaite visualiser sous formes de graphique, exporter l'ensemble des
+données ou une partie/période spécifique de mon portefeuille boursier\\
+afin d'analyser mes performances en dehors de l'application.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'interface présente des vues en tableaux de données et en graphiques.
+\item
+  Le client peut filtrer une période spécifique, une partie spécifique
+  (par type de placement) ou regarder l'ensemble des données.
+\item
+  L'exportation peut se réaliser dans plusieurs formats différents (PDF,
+  CSV)
+\end{itemize}
+
+\subparagraph{US9 - Percevoir les dividendes, intérêts et remboursements
+à
+terme}\label{us9---percevoir-les-dividendes-intuxe9ruxeats-et-remboursements-uxe0-terme}
+
+En tant que client investisseur,\\
+je souhaite percevoir automatiquement les dividendes de mes actions, les
+intérêts de mes obligations et le remboursement de mes placements à
+terme\\
+afin de fructifier mon patrimoine financier.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Les dividendes et intérêts sont versés automatiquement sur le compte
+  courant lié au compte titre à échéance ou à intervalle régulier selon
+  le type de placement
+\item
+  Les prélèvement fiscaux liés aux revenus du capital sont
+  automatiquement prélevés à la source si applicable
+\item
+  Lors de l'expiration d'un bon de caisse ou d'une obligation le montant
+  investi est automatiquement reversé sur le compte courant lié au
+  compte titre
+\end{itemize}
+
+\subparagraph{US10 - Valider et attribuer le profil
+d'investisseur}\label{us10---valider-et-attribuer-le-profil-dinvestisseur}
+
+En tant qu'employé d'une institution financière,\\
+je souhaite analyser les formulaires soumis par mes clients\\
+afin de leur attribuer un profil d'investisseur
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'employé a accès à chaque formulaire soumis par les clients de son
+  institution financière
+\item
+  L'employé en fonction des réponses du formulaire soumis attribue un
+  profil d'investisseur au client qui a soumis celui-ci
+\item
+  Une fois le formulaire validé, le formulaire soumis est archivé et le
+  profil d'investisseur est appliqué au client
+\end{itemize}
+
+\subparagraph{US11 - Consulter les comptes-titres des clients de
+l'institution}\label{us11---consulter-les-comptes-titres-des-clients-de-linstitution}
+
+En tant qu'employé d'une institution financière,\\
+je souhaite visualiser la liste des comptes-titres et leur contenu\\
+afin de conseiller au mieux mes clients.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'employé a uniquement accès aux comptes-titres des clients de
+  l'institution financière où il travaille
+\item
+  L'interface de visualisation du compte-titre est identique à celle du
+  client qui le détient
+\item
+  L'employé peut rechercher les comptes titres à l'aide de multiples
+  critères (nom du titulaire, type de placement, compartiment de devise,
+  etc\ldots)
+\end{itemize}
