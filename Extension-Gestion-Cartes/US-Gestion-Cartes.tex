@@ -1,0 +1,300 @@
+\textbf{UE :} S-INFO-015 Projet d'analyse et de conception logicielle\\
+\textbf{Année académique :} 2026-2027\\
+\textbf{Groupe :} G02 \textbf{Responsable de l'extension :} Fontaine
+Alexis (Matricule : 250602)
+
+\hypertarget{extension-gestion-de-cartes}{%
+\subsubsection{Extension : gestion de
+cartes}\label{extension-gestion-de-cartes}}
+
+\hypertarget{us1-demander-une-carte}{%
+\subparagraph{US1 Demander une carte}\label{us1-demander-une-carte}}
+
+En tant que titulaire, je veux pouvoir demander une nouvelle carte à une
+institution,\\
+afin d'y ascocier un compte.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  L'utilisateur doit-être conncecté.
+\item
+  Chaque carte a un numéro unique, une date d'expiration, un code de
+  sécurité et un code PIN.
+\item
+  La carte reçue est inactive.
+\end{itemize}
+
+\hypertarget{us2-lier-un-compte-uxe0-une-carte}{%
+\subparagraph{US2 Lier un compte à une
+carte}\label{us2-lier-un-compte-uxe0-une-carte}}
+
+En tant que titulaire possédant une carte active, je veux pouvoir y
+ascocier un compte, afin de faire des achats avec la carte.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Une carte n'est liée qu'a un seul compte.
+\item
+  Un compte peut être lié à plusieurs cartes.
+\item
+  L'utilisateur doit être titulaire ou co-titulaire du compte.
+\item
+  Il doit être possible de dissocier une carte d'un compte.
+\end{itemize}
+
+\hypertarget{us3-visualisation-de-la-carte}{%
+\subparagraph{US3 Visualisation de la
+carte}\label{us3-visualisation-de-la-carte}}
+
+En tant que titulaire possédant une carte, je veux pouvoir voir les
+informations la concernant (date, numéro, code de sécurité/verification)
+ainsi que le nombre de crédit restant pour les cartes de crédits,\\
+afin de savoir l'argent que je peux encore dépenser.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  La visualisation n'est possible que si l'utilisateur est connecté.
+\item
+  Précise si la carte est active ou non.
+\end{itemize}
+
+\hypertarget{us4-se-connecter-avec-une-carte}{%
+\subparagraph{US4 Se connecter avec une
+carte}\label{us4-se-connecter-avec-une-carte}}
+
+En tant que titulaire possédant une carte active, je veux pouvoir me
+connecter à l'application avec mon numéro de carte et un code PIN,\\
+afin de faciliter la connection.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Il s'agit d'une fonctionnalité que l'utilsateur peut
+  activer/désactiver pour chacune de ses cartes.
+\item
+  Il doit y avoir une limite maximale d'échecs pour entrer le code PIN.
+  Si la limite est dépassée, une notification est envoyée et cette carte
+  ne peut plus servir pour se connecter à l'application temps que
+  l'utilisateur ne réactive pas cette fonctionnalité.
+\end{itemize}
+
+\hypertarget{us5-visualisation-de-lhistorique-de-la-carte}{%
+\subparagraph{US5 Visualisation de l'historique de la
+carte}\label{us5-visualisation-de-lhistorique-de-la-carte}}
+
+En tant que titulaire possédant une carte, je veux pouvoir visualiser et
+exporter l'historique d'une carte de la même façon que je visualise
+l'historique d'un compte, afin de stocker les données en local.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  La visualisation doit être la même que celle utilisée pour les
+  comptes.
+\item
+  Une carte est considéré comme un produit financier pour la
+  visualisation.
+\end{itemize}
+
+\hypertarget{us6-expiration-dune-carte}{%
+\subparagraph{US6 Expiration d'une
+carte}\label{us6-expiration-dune-carte}}
+
+En tant que titulaire possédant une carte active, je veux
+automatiquement recevoir une nouvelle carte lorsque l'une d'entre elle
+expire, afin de continuer mes achats.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Une carte inactive qui expire, ne déclenche pas la procédure.
+\item
+  Une fois la date d'expiration dépassée, l'utilisation de la carte est
+  impossible.
+\item
+  Avant l'expiration de la carte, l'utilisateur est averti et reçoit une
+  nouvelle carte non active.
+\item
+  Lors de l'activation de la nouvelle carte, l'ancienne est
+  automatiquement désactivée.
+\end{itemize}
+
+\hypertarget{us7-bloquer-une-carte}{%
+\subparagraph{US7 Bloquer une carte}\label{us7-bloquer-une-carte}}
+
+En tant que titulaire possédant une carte, je veux pouvoir bloquer une
+carte et au besoin en demander une nouvelle, afin de me préserver en cas
+de perte ou de vol.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Il est possible de bloquer une carte qui n'est pas encore active.
+\item
+  La demande doit être envoyée à la banque qui bloquera la carte.
+\item
+  L'utilisateur reçoit à la demande, une nouvelle carte qu'il devra
+  activer.
+\item
+  Une carte bloquée est inactive et ne peut pas être réactivée.
+\end{itemize}
+
+\hypertarget{us8-modifier-une-carte}{%
+\subparagraph{US8 Modifier une carte}\label{us8-modifier-une-carte}}
+
+En tant que titulaire possédant une carte active, je veux pouvoir
+modifier le seuil de crédit accordé, autoriser ou non l'utilisation à
+l'étranger et autoriser ou non les transactions qui donneront lieues à
+un solde négatif, afin d'utiliser ma carte dans les meilleures
+conditions.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Modifier le seuil de crédit doit être validé par la banque.
+\item
+  Les modifications peuvent être temporaire avec une date de fin
+  prédéfinie.
+\end{itemize}
+
+\hypertarget{us9-utiliser-la-carte}{%
+\subparagraph{US9 Utiliser la carte}\label{us9-utiliser-la-carte}}
+
+En tant que titulaire possédant une carte active, je veux pouvoir
+utiliser ma carte pour effectuer des achats,\\
+afin de le faire de façon simplifié.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Doit tenir compte des frais d'utilisation et d'une taxe à l'étranger.
+\end{itemize}
+
+\hypertarget{us10-activer-une-carte}{%
+\subparagraph{US10 Activer une carte}\label{us10-activer-une-carte}}
+
+En tant que titulaire possédant une carte, je veux pouvoir activer une
+carte, afin d'accéder à toutes les fonctionalités possibles avec la
+carte.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Activer une carte se fait directement dans l'application avec le code
+  PIN.
+\end{itemize}
+
+\hypertarget{us11-modifier-le-code-pin-dune-carte}{%
+\subparagraph{US11 Modifier le code PIN d'une
+carte}\label{us11-modifier-le-code-pin-dune-carte}}
+
+En tant que titulaire possédant une carte, Je veux pouvoir modifier le
+code PIN de ma carte, afin de mémoriser plus facilement le code.
+
+\textbf{Critères d'acceptations :}
+
+\begin{itemize}
+\tightlist
+\item
+  Cette opération requiert l'ancien code PIN.
+\item
+  Si la carte est inactive cela activera explicitement la carte avec une
+  confirmation du titulaire.
+\end{itemize}
+
+\hypertarget{us12-validation-du-bloquage-dune-carte}{%
+\subparagraph{US12 Validation du bloquage d'une
+carte}\label{us12-validation-du-bloquage-dune-carte}}
+
+En tant qu'employé d'une institution financiaire, je veux pouvoir
+valider la demande de bloquage d'une carte d'un titulaire, afin de
+rendre cette carte définitivement inactive.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Le titulaire de la carte bloquée reçoit une notifiaction lors de la
+  validation du bloquaga.
+\item
+  Démarre la procédure de création d'une nouvelle carte si le client la
+  demandée.
+\end{itemize}
+
+\hypertarget{us13-validation-dune-demande-de-carte}{%
+\subparagraph{US13 Validation d'une demande de
+carte}\label{us13-validation-dune-demande-de-carte}}
+
+En tant qu'employé d'une institution financiaire, je veux pouvoir
+valider la demande de création d'une nouvelle carte d'un client, afin
+que le client reçoive une carte.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Une carte créée est inactive.
+\end{itemize}
+
+\hypertarget{us13-validation-dune-demande-de-modification-de-paramuxe8tres-dune-carte}{%
+\subparagraph{US13 Validation d'une demande de modification de
+paramètres d'une
+carte}\label{us13-validation-dune-demande-de-modification-de-paramuxe8tres-dune-carte}}
+
+En tant qu'employé d'une institution financiaire, je veux pouvoir
+valider la demander de modification de paramètres de carte d'un client,
+afin que le client ait les paramètres de son choix.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Si la demande est temporaire, aucune vérifiaction n'est requise lors
+  de la date d'expiration du paramètre qui revient à sa valeur
+  précédente.
+\end{itemize}
+
+\hypertarget{us14-visualiser-les-cartes-en-circulation}{%
+\subparagraph{US14 Visualiser les cartes en
+circulation}\label{us14-visualiser-les-cartes-en-circulation}}
+
+En tant qu'employé d'une institution financiaire, je veux pouvoir
+visualiser les cartes émisent par cette institution financiaire, afin de
+savoir combien de cartes sont en circulation.
+
+\textbf{Critères d'acceptation :}
+
+\begin{itemize}
+\tightlist
+\item
+  Seul les cartes émisent par cette institution sont visible.
+\item
+  Les infomations ne contiennent pas des information sensible telque le
+  code PIN.
+\end{itemize}
