@@ -1,9 +1,9 @@
-# Paiement et Gestion de fraude:
+### Paiement et Gestion de fraude:
 
-## US1 - Création d'une demande de paiement par QR code:
+#### US1 - Création d'une demande de paiement par QR code:
 En tant que titulaire, je veux pouvoir créér une demande de QR code afin de facilité la réception d'un paiements
 
-### Critères d'acceptation :
+**Critères d'acceptation :**
 
 - l'application doit permettre a l'utilisateur de générer un QR code.
 - Le QR code doit contenir: 
@@ -20,10 +20,10 @@ En tant que titulaire, je veux pouvoir créér une demande de QR code afin de fa
     - celui-ci choisit le compte source à débiter;
     - le montant est transféré automatiquement vers le compte bénéficiare encodé dans le QR code.
 
-## US2 - Paiement par QR code:
+#### US2 - Paiement par QR code:
 En tant que titulaire, je veux pouvoir payer par QR code afin de facilité les paiements.
 
-### critères d'acceptation :
+**Critères d'acceptation :**
 
 - Le paiement ne doit pas être accepté si le QR code est invalide (expiré ou déjà utilisé).
 - Après une transaction réussie :
@@ -33,10 +33,11 @@ En tant que titulaire, je veux pouvoir payer par QR code afin de facilité les p
     
 
 
-## US3 - Paiement avec ou sans contact : 
+#### US3 - Paiement avec ou sans contact : 
 En tant titulaire, je veux pouvoir effectuer des paiements avec ou sans contact afin de réaliser des achats de manière rapide et sécurisée.
 
-### critères d'acceptation :
+**Critères d'acceptation :**
+
 - L'utilisateur peut sélectionner un paiement parmi ceux disponibles dans l'application.
 - L'utilisateur peut choisir entre :
     - un paiement avec contact;
@@ -59,9 +60,10 @@ En tant titulaire, je veux pouvoir effectuer des paiements avec ou sans contact 
     - Une limite mensuelle.
 - Le paiement est refusé lorsque l'une des limites configurées est dépassée 
 
-## US4- Analyse des transactions:
+#### US4- Analyse des transactions:
 En tant que System (Automatique), je veut que les transactions des clients soit analyse afin que toute activite suspecte sur le compte client soit detecter.
-### criteres d'acceptation:
+
+**Critères d'acceptation :**
 
 - L'application doit enregistrer les métadonnées suivantes pour chaque transaction :
     - Montant, date, heure, mode de paiement, lieu de paiement, pays de paiement, destinataire.
@@ -77,10 +79,10 @@ En tant que System (Automatique), je veut que les transactions des clients soit 
 - Le système doit tenir compte des suspicions précédentes pour ajuster son niveau d'alerte.
 - Lorsqu'un suspicion est détectée, l'utilisateur doit recevoir une notification.
 
-## US5- Gestion de fraude : 
+#### US5- Gestion de fraude : 
 En tant que Systeme (Automatique), je veux réagir automatiquement lorsqu'une fraude est suspectée afin de protéger le compte client.
 
-### Critères d'acceptation :
+**Critères d'acceptation :**
 
 - Le système doit attribuer un niveau de risque:
     - faible;
@@ -101,11 +103,11 @@ En tant que Systeme (Automatique), je veux réagir automatiquement lorsqu'une fr
 - Toute desicion prise doivent etre enregistrées dans l'historique des fraudes.
 - Chaque suspicion doit etre enregistrée dans un historique dédié.
 
-## US6 - Consultation de l'historique des transactions :
+#### US6 - Consultation de l'historique des transactions :
 
 En tant que titulaire, je veut consulter mon historique de transaction afin de consulté mes opération et détecté toute activité suspecte.
 
-### Critères d'acceptation:
+**Critères d'acceptation :**
 
 - Toutes les transaction passé doivent figurée dans l'historique des transaction
 - L'application doit enregistrer pour chaque transaction:
@@ -125,10 +127,10 @@ En tant que titulaire, je veut consulter mon historique de transaction afin de c
 - Les transaction peuvent etre triées par date.
 - L'utilisateur peut consulter l'historique des transactions suspectes ainsi que leur niveau de risque.
 
-## US7 - Signalement des faux positifs et consultation des alertes:
+#### US7 - Signalement des faux positifs et consultation des alertes:
 En tant que titulaire, je veux pouvoir consulter les alertes de fraudes détectées sur mon compte afin de comprendres les actions prise par le systemes et déclarer les faux positifs.
 
-### Critères d'acceptations:
+**Critères d'acceptation :**
 
 - Toute les transaction détécté comme suspecte de fraude doivent figurée dans l'historique.
 - Pour chaque alerte, les informations suivant doivent etre disponibles:
