@@ -11,6 +11,12 @@
 
 \geometry{hmargin=2.5cm,vmargin=2.5cm}
 
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\normalsize\bfseries}}
+\makeatother
 
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -231,6 +237,82 @@ Dans le cas contraire, la phase de déconnexion débute et l'utilisateur (client
     \label{fig_iod_ext4}
 \end{figure}
 \noindent \textit{Le diagramme ci-dessus se trouve dans le projet Visual Paradigm Extension\_Placement.vpp et l'image peut être retrouvée dans le fichier "IOD\_Placement.jpg" dans l'archive contenant ce rapport.}
+
+\pagebreak
+Afin de rendre ce diagramme plus lisible, voici un découpage des différentes parties de celui-ci :
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.3\textwidth]{Extension-Placements/IOD-Areas/IOD_Placement_Areas.jpg}}
+    \caption{Interaction Overview Diagram -- Découpage}
+    \label{fig_iod_ext4_areas}
+\end{figure}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\paragraph{IOD - Phase de connexion}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{Extension-Placements/IOD-Areas/ConnexionArea.png}}
+    \caption{Interaction Overview Diagram -- Phase de connexion}
+    \label{fig_iod_ext4_connexion}
+\end{figure}
+
+\paragraph{IOD - Actions client : Gestion des placements et compte-titre}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.1\textwidth]{Extension-Placements/IOD-Areas/ClientPlacementsArea.png}}
+    \caption{Interaction Overview Diagram -- Actions client : Gestion des placements}
+    \label{fig_iod_ext4_client_placements}
+\end{figure}
+
+\paragraph{IOD - Actions client : Navigation, virements et visualisation}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{Extension-Placements/IOD-Areas/ClientActionArea1.png}}
+    \caption{Interaction Overview Diagram -- Actions client : Navigation et virements}
+    \label{fig_iod_ext4_client_nav}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{Extension-Placements/IOD-Areas/ClientActionArea2.png}}
+    \caption{Interaction Overview Diagram -- Visualisation et export de données}
+    \label{fig_iod_ext4_client_visu}
+\end{figure}
+
+\paragraph{IOD - Actions employé}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{Extension-Placements/IOD-Areas/EmpActionArea1.png}}
+    \caption{Interaction Overview Diagram -- Actions employé : Gestion des clients et validation du profil}
+    \label{fig_iod_ext4_emp_clients}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{Extension-Placements/IOD-Areas/EmpActionArea2.png}}
+    \caption{Interaction Overview Diagram -- Actions employé : Produits financiers et import}
+    \label{fig_iod_ext4_emp_produits}
+\end{figure}
+
+\paragraph{IOD - Phase de déconnexion}
+\begin{figure}[H]
+    \centering
+    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{Extension-Placements/IOD-Areas/DeconnexionArea.png}}
+    \caption{Interaction Overview Diagram -- Phase de déconnexion}
+    \label{fig_iod_ext4_deconnexion}
+\end{figure}
+
+\paragraph{Explications de l'IOD}
+L'utilisateur est soit un client soit un employé. Dans l'espace client, il peut, s'il ne l'a pas déjà fait, introduire une demande pour ouvrir un compte-titre et ensuite remplir le formulaire d'investisseur pour commencer à réaliser des opérations sur placements. De plus, dans l'espace employé, l'employé a la responsabilité de valider et attribuer un profil d'investisseur aux clients qui ont rempli le formulaire ; il traite aussi les demandes d'ouverture de comptes-titres et assure leur audit et leur gestion. Une fois leur action effectuée, ils sont libres de faire une nouvelle action ou de terminer leur session en se déconnectant.
+
+\vspace{0.3cm}
+\noindent \textit{NB : Les découpes du diagramme peuvent être consultées dans le sous-dossier Extension\allowbreak-Placements/\allowbreak IOD-Areas/ de l'archive contenant ce rapport.}
+\pagebreak
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
 \subsubsection{User Stories}
 \input{Extension-Placements/user-stories-placements.tex}
