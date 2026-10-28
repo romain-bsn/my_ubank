@@ -2,10 +2,10 @@
 **Année académique :** 2026-2027  
 **Groupe :** G02 
 **Membres du groupe :**
-- Berkani Zinediné (Matricule : )
-- Fontaine Alexis (Matricule : )
+- Berkani Zinediné (Matricule : 232034)
+- Fontaine Alexis (Matricule : 250602)
 - Quarta Hugo (Matricule : 250711)
-- Vandooren Romain (Matricule : )
+- Vandooren Romain (Matricule : 251074)
 
 ---
 
